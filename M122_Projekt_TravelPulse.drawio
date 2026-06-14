@@ -1,0 +1,102 @@
+<mxGraphModel dx="1557" dy="1048" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Start TravelPulse" vertex="1">
+      <mxGeometry height="60" width="180" x="560" y="20" as="geometry" />
+    </mxCell>
+    <mxCell id="input1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&#xa;&lt;span style=&quot;color: rgb(255, 255, 255); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(27, 29, 30); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Benutzer gibt Stadt ein&lt;/span&gt;&#xa;&#xa;" vertex="1">
+      <mxGeometry height="70" width="240" x="530" y="120" as="geometry" />
+    </mxCell>
+    <mxCell id="input2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Benutzer gibt Ausgangswährung ein" vertex="1">
+      <mxGeometry height="70" width="240" x="530" y="230" as="geometry" />
+    </mxCell>
+    <mxCell id="geo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Geocoding API aufrufen&#xa;(Open-Meteo)" vertex="1">
+      <mxGeometry height="70" width="240" x="530" y="340" as="geometry" />
+    </mxCell>
+    <mxCell id="decision_city" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Stadt gefunden?" vertex="1">
+      <mxGeometry height="100" width="190" x="555" y="450" as="geometry" />
+    </mxCell>
+    <mxCell id="error_city" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Fehlermeldung:&#xa;Stadt nicht gefunden" vertex="1">
+      <mxGeometry height="70" width="230" x="860" y="465" as="geometry" />
+    </mxCell>
+    <mxCell id="extract" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Name, Land, country_code,&#xa;timezone, latitude, longitude auslesen" vertex="1">
+      <mxGeometry height="80" width="300" x="500" y="600" as="geometry" />
+    </mxCell>
+    <mxCell id="currency" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Zielwährung anhand&#xa;des Landes bestimmen" vertex="1">
+      <mxGeometry height="70" width="260" x="520" y="700" as="geometry" />
+    </mxCell>
+    <mxCell id="time" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Lokale Uhrzeit über&#xa;Timezone API holen" vertex="1">
+      <mxGeometry height="70" width="240" x="150" y="890" as="geometry" />
+    </mxCell>
+    <mxCell id="weather" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Wetterdaten über&#xa;Open-Meteo holen" vertex="1">
+      <mxGeometry height="70" width="240" x="390" y="810" as="geometry" />
+    </mxCell>
+    <mxCell id="fx" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Wechselkurs über&#xa;Frankfurter API holen" vertex="1">
+      <mxGeometry height="70" width="240" x="680" y="810" as="geometry" />
+    </mxCell>
+    <mxCell id="crypto" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="BTC/ETH-Kurse über&#xa;CoinPaprika holen" vertex="1">
+      <mxGeometry height="70" width="240" x="920" y="890" as="geometry" />
+    </mxCell>
+    <mxCell id="format" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Daten formatieren&#xa;(Uhrzeit, Wettertext, Zahlen)" vertex="1">
+      <mxGeometry height="70" width="260" x="520" y="970" as="geometry" />
+    </mxCell>
+    <mxCell id="output" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="Infos im Terminal ausgeben" vertex="1">
+      <mxGeometry height="70" width="240" x="530" y="1080" as="geometry" />
+    </mxCell>
+    <mxCell id="end" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Ende" vertex="1">
+      <mxGeometry height="60" width="180" x="560" y="1190" as="geometry" />
+    </mxCell>
+    <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="input1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e2" edge="1" parent="1" source="input1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="input2">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e3" edge="1" parent="1" source="input2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="geo">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e4" edge="1" parent="1" source="geo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="decision_city">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e5" edge="1" parent="1" source="decision_city" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="error_city" value="Nein">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e6" edge="1" parent="1" source="decision_city" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="extract" value="Ja">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e7" edge="1" parent="1" source="extract" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="currency">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e8" edge="1" parent="1" source="currency" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="time">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e9" edge="1" parent="1" source="currency" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="weather">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e10" edge="1" parent="1" source="currency" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="fx">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e11" edge="1" parent="1" source="currency" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="crypto">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e12" edge="1" parent="1" source="time" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="format">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e13" edge="1" parent="1" source="weather" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="format">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e14" edge="1" parent="1" source="fx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="format">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e15" edge="1" parent="1" source="crypto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="format">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e16" edge="1" parent="1" source="format" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="output">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e17" edge="1" parent="1" source="output" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" target="end">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>
