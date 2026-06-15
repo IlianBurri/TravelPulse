@@ -204,21 +204,7 @@ Ein detailliertes Flowchart findest du in [`docs/flowchart.drawio`](docs/flowcha
 - **API nicht erreichbar** → automatische Wiederholung (bis zu 3 Versuche mit Backoff)
 - **Ollama nicht erreichbar** → Hinweis zum Starten, Programm läuft trotzdem normal weiter
 - `set -euo pipefail` sorgt für robustes Fehlerverhalten im gesamten Skript
-
----
-
-## 📚 Projektkontext
-
-Dieses Projekt wurde im Rahmen des Moduls **M122** am **Berufsbildungszentrum Wirtschaft, Informatik und Technik – Sursee** entwickelt.
-
-**Lernziele:**
-- Konzeptionelle Planung eines Automations-Skripts (Flowchart)
-- Implementation in Bash
-- Aufbau einer Testumgebung
-- Projektpräsentation
-
-**Lernender:** Ilian Burri
-
+- 
 ---
 
 ## 📄 Lizenz
